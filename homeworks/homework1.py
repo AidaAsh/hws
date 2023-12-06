@@ -3,7 +3,7 @@ class Home:
     def new(self, arg: int):
         try:
             arg = int(arg)
-            return arg
+            return True
         except ValueError:
             return ValueError
 
