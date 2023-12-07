@@ -5,7 +5,7 @@ class Home:
             arg = int(arg)
             return True
         except ValueError:
-            return ValueError
+            return 'ValueError'
 
 
 home1 = Home()
