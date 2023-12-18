@@ -47,7 +47,7 @@ class Air(SuperHero):
     fly = False
 
     def __init__(self, name, nickname, superpower, health_points, damage, catchphrase):
-        SuperHero.__init__(name, nickname, superpower, health_points, catchphrase)
+        super().__init__(name, nickname, superpower, health_points, catchphrase)
         self.damage = damage
 
     def __str__(self):
