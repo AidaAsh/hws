@@ -77,15 +77,28 @@ class Villain(Air, SuperHero):
 print('3 дз')
 hero2 = Air('Виктор Федоров', 'воздушный казак Вердена', 'летать на истребителе',200,20,'')
 hero2.printPhrase()
-print(f'Стало {hero2.health_points} здоровья у героя, умение летать {hero2.fly}')
-hero2.health_points2()
 print(f'Было {hero2.health_points} здоровья у героя, умение летать {hero2.fly}')
+hero2.health_points2()
+print(f'Стало {hero2.health_points} здоровья у героя, умение летать {hero2.fly}')
 villain = Villain('Билл Шифер','Злой треугольник','телепортация, ясновидение,'
                                                   ' иллюзия, контроль физического тела',200,20,'Помни Реальность')
 print(f'У злодея было {villain.damage} урона')
 villain.crit()
 print(f'Стало {villain.damage} урона')
+
+
+# применить метод crit на объект другого класса у которого есть аргумент damage
+class VillainTrue(Villain):
+    pass
+
+
+villain_t = VillainTrue('', '','','',
+                        1000,'')
+
+villain_t.crit()
+print(villain_t.damage)
 try:
+    # применить метод crit на объект другого класса у которого есть аргумент damage
     hero2.crit()
 except Exception as e:
     print(e)
