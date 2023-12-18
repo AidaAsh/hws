@@ -47,7 +47,7 @@ class Air(SuperHero):
     fly = False
 
     def __init__(self, name, nickname, superpower, health_points, damage, catchphrase):
-        super().__init__(name, nickname, superpower, health_points, catchphrase)
+        SuperHero.__init__(name, nickname, superpower, health_points, catchphrase)
         self.damage = damage
 
     def __str__(self):
@@ -64,7 +64,7 @@ class Air(SuperHero):
         self.fly = True
 
 
-class Villain(Air):
+class Villain(Air, SuperHero):
     people = 'monster'
 
     def gen_x(self):
@@ -75,7 +75,7 @@ class Villain(Air):
 
 
 print('3 дз')
-hero2 = Air('Виктор Федоров','воздушный казак Вердена', 'летать на истребителе',200,20,'')
+hero2 = Air('Виктор Федоров', 'воздушный казак Вердена', 'летать на истребителе',200,20,'')
 hero2.printPhrase()
 print(f'Стало {hero2.health_points} здоровья у героя, умение летать {hero2.fly}')
 hero2.health_points2()
