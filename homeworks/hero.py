@@ -63,6 +63,9 @@ class Air(SuperHero):
         self.health_points = int(self.health_points) ** 2
         self.fly = True
 
+    def crit(self):
+        Villain.crit(self)
+
 
 class Villain(Air, SuperHero):
     people = 'monster'
@@ -91,9 +94,9 @@ print(f'Стало {villain.damage} урона')
 class VillainTrue(Villain):
     pass
 
-
-villain_t = VillainTrue('', '','','',
-                        1000,'')
+# Villain.crit(hero2.damage)
+villain_t = VillainTrue('', '', '', '',
+                        1000, '')
 
 villain_t.crit()
 print(villain_t.damage)
